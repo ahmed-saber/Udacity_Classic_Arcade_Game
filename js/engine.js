@@ -161,8 +161,8 @@ var Engine = (function (global) {
     function reset() {
         // VARS
         let playerImage = Resources.get('images/char-boy.png');
-        player.x = (canvas.width / 2) - (playerImage.width / 2);
-        player.y = (canvas.height) - (playerImage.height) - 50;
+        player.moveToX = (canvas.width / 2) - (playerImage.width / 2);
+        player.moveToY = (canvas.height) - (playerImage.height) - 50;
     }
 
     /* Go ahead and load all of the images we know we're going to need to

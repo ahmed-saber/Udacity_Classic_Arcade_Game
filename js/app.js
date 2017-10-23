@@ -36,7 +36,14 @@ var Player = function () {
 };
 
 Player.prototype.update = function () {
-    this.x = this.moveToX;
+    var canvasWidth = ctx.canvas.width;
+    var canvasHeight = ctx.canvas.height;
+    console.log(this.moveToX,canvasWidth);
+    if(!(this.moveToX > canvasWidth || this.moveToX < 0)){
+        this.x = this.moveToX;
+    }else{
+        this.moveToX = this.x;
+    }
     this.y = this.moveToY;
 };
 
