@@ -1,6 +1,33 @@
-frontend-nanodegree-arcade-game
-===============================
+# Memory Game
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Table of Contents
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+* [Description](#Description)
+* [Instructions](#instructions)
+* [Contributing](#contributing)
+
+### Description
+
+- Memory game where you need to match pairs of cards. Playing is very simple - you turn over one tile and then try to find a matching tile.
+- You get three stars if you matched the cards in less moves than the number of cards.
+
+![Starting the game](screenshots/screen-1.jpg)
+
+![Finished the game](screenshots/screen-2.jpg)
+
+### Instructions
+
+- You can customize the game settings from this file `js/app.js`.
+- Run the game from `index.html` file.
+
+## Project details
+
+- Styling the project design from this file `css/app.css`.
+- Animate.css is included you can find it inside this path `css/animate.css`.
+- The game is using bootstrap and jQuery.
+
+### Contributing
+
+No contribution needed for this project. Therefore, we most likely will not accept pull requests.
+
+For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).

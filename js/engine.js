@@ -79,7 +79,7 @@ var Engine = (function (global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -90,7 +90,6 @@ var Engine = (function (global) {
      * render methods.
      */
     function updateEntities(dt) {
-        ctx.clearRect(0,0,canvas.width,canvas.height);
         allEnemies.forEach(function (enemy) {
             enemy.update(dt);
         });
@@ -147,10 +146,12 @@ var Engine = (function (global) {
         /* Loop through all of the objects within the allEnemies array and call
          * the render function you have defined.
          */
+        gems.forEach(function (gem) {
+            gem.render();
+        });
         allEnemies.forEach(function (enemy) {
             enemy.render();
         });
-
         player.render();
     }
 
@@ -159,10 +160,51 @@ var Engine = (function (global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // VARS
-        let playerImage = Resources.get('images/char-boy.png');
-        player.moveToX = (canvas.width / 2) - (playerImage.width / 2);
-        player.moveToY = (canvas.height) - (playerImage.height) - 50;
+        // END TIME
+        startTimer = null;
+        clearInterval(timer);
+        // RESET PLAYER POSITION
+        player.positions = {
+            'x': 2,
+            'y': 5
+        };
+        let pos = positions[player.positions.y][player.positions.x];
+        player.x = pos.x;
+        player.y = pos.y;
+        // RESET THE GEMS
+        initGems();
+        // RESET ENEMIES
+        initEnemies();
+    }
+
+    /* CHECK PLAYER COLLISION */
+    function checkCollisions() {
+        // CHECK IF PLAYER AND ENEMY COLLIDED
+        for (var i = 0; i < allEnemies.length; i++) {
+            var enemy = allEnemies[i];
+            if (
+                player.x < enemy.x + enemy.width &&
+                player.x + player.width > enemy.x &&
+                player.y < enemy.y + enemy.height &&
+                player.height + player.y > enemy.y
+            ) {
+                // RESET THE GAME
+                reset();
+                break;
+            }
+
+        }
+        // CHECK IF PLAYER AND ENEMY COLLIDED
+        gems.forEach(function (gem, index) {
+            if (
+                player.x < gem.x + gem.width &&
+                player.x + player.width > gem.x &&
+                player.y < gem.y + gem.height &&
+                player.height + player.y > gem.y
+            ) {
+                gems.splice(index, 1);
+            }
+        });
     }
 
     /* Go ahead and load all of the images we know we're going to need to
@@ -170,11 +212,17 @@ var Engine = (function (global) {
      * all of these images are properly loaded our game will start.
      */
     Resources.load([
+        'images/char-boy.png',
+        'images/char-cat-girl.png',
+        'images/char-horn-girl.png',
+        'images/char-pink-girl.png',
         'images/stone-block.png',
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/Gem Blue.png',
+        'images/Gem Green.png',
+        'images/Gem Orange.png'
     ]);
     Resources.onReady(init);
 
@@ -183,4 +231,5 @@ var Engine = (function (global) {
      * from within their app.js files.
      */
     global.ctx = ctx;
+    global.reset = reset;
 })(this);
