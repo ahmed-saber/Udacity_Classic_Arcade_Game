@@ -1,6 +1,31 @@
-frontend-nanodegree-arcade-game
-===============================
+# Classic Arcade Game
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Table of Contents
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+* [Description](#Description)
+* [Instructions](#instructions)
+* [Contributing](#contributing)
+
+### Description
+
+- Classic Arcade Game where you need to move the player to using your keyboard arrows and collect all the gems.
+
+![Starting the game](images/screenshots/screen-1.jpg)
+
+![Finished the game](images/screenshots/screen-2.jpg)
+
+### Instructions
+
+- You can customize the game settings from this file `js/app.js`.
+- Run the game from `index.html` file.
+
+## Project details
+
+- Styling the project design from this file `css/style.css`.
+- The game is using bootstrap and jQuery.
+
+### Contributing
+
+No contribution needed for this project. Therefore, we most likely will not accept pull requests.
+
+For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
