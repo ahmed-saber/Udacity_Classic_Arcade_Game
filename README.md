@@ -1,4 +1,4 @@
-# Memory Game
+# Classic Arcade Game
 
 ## Table of Contents
 
@@ -8,12 +8,11 @@
 
 ### Description
 
-- Memory game where you need to match pairs of cards. Playing is very simple - you turn over one tile and then try to find a matching tile.
-- You get three stars if you matched the cards in less moves than the number of cards.
+- Classic Arcade Game where you need to move the player to using your keyboard arrows and collect all the gems.
 
-![Starting the game](screenshots/screen-1.jpg)
+![Starting the game](images/screenshots/screen-1.jpg)
 
-![Finished the game](screenshots/screen-2.jpg)
+![Finished the game](images/screenshots/screen-2.jpg)
 
 ### Instructions
 
@@ -22,8 +21,7 @@
 
 ## Project details
 
-- Styling the project design from this file `css/app.css`.
-- Animate.css is included you can find it inside this path `css/animate.css`.
+- Styling the project design from this file `css/style.css`.
 - The game is using bootstrap and jQuery.
 
 ### Contributing
