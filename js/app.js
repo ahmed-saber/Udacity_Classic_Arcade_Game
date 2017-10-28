@@ -27,7 +27,7 @@ for (row = 0; row <= numRows; row++) {
             'y': lastRow
         });
     }
-    lastRow += 84;
+    lastRow += 81;
 }
 
 // Get random item from an array function from https://stackoverflow.com/questions/5915096/get-random-item-from-javascript-array
@@ -180,7 +180,7 @@ var Player = function () {
 };
 
 Player.prototype.update = function () {
-    if(gems.length == 0 && player.positions.y == 0){
+    if(gems.length == 0 && this.positions.y == 0){
         // END TIME
         clearInterval(timer);
         // OPEN THE MODAL
@@ -215,9 +215,9 @@ Player.prototype.handleInput = function (s) {
             'x': x,
             'y': y
         };
-        let pos = positions[player.positions.y][player.positions.x];
-        player.x = pos.x;
-        player.y = pos.y;
+        let pos = positions[this.positions.y][this.positions.x];
+        this.x = pos.x;
+        this.y = pos.y;
     }
 };
 
